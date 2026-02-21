@@ -3,11 +3,12 @@
 ## Prerequisites
 
 - **Python**: 3.10 or higher
-- **RAM**: 12GB minimum (8GB with optimizations)
+- **RAM**: 8+ GB
 - **Disk**: 1.5GB for models and dependencies
+- **CPU**: 4+ cores recommended
 - **OS**: Windows, macOS, Linux
 
-## Option 1: Quick Start (Recommended)
+## Option 1: Quick Start
 
 ### 1. Clone Repository
 ```bash

@@ -1,30 +1,39 @@
-# 📋 Policy Pilot: Offline Insurance Policy AI Chatbot
+# PolicyPilot: Offline Insurance Policy Query System
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
-[![Code Style](https://img.shields.io/badge/Code%20Style-Black-000000)](https://github.com/psf/black)
-[![Tests](https://img.shields.io/badge/Tests-5%2F5%20Passing-brightgreen)](#testing)
 
-**Offline AI-powered document analysis chatbot** that reads insurance policy PDFs, understands clauses, and answers queries in **structured JSON**. Everything runs locally—no internet, no APIs.
+A local-only system for querying insurance policy documents using semantic search and language models. Processes PDF documents, creates searchable indexes, and retrieves relevant clauses with LLM-generated responses.
 
-## 🎯 Problem Statement
+## Overview
 
-Insurance policies are complex and lengthy. Users need:
-- ✅ **Quick answers** to specific questions
-- ✅ **Accurate clause citations** with references  
-- ✅ **Structured outputs** (JSON) for integration
+PolicyPilot enables users to ask questions about insurance policies stored as PDFs. The system extracts relevant policy clauses using vector similarity search and generates responses using a local language model. All processing occurs on-device with no external API calls.
 
-**Traditional search fails**: keyword matching cannot understand legal meaning. Policy Pilot combines **semantic retrieval + LLM reasoning** for intelligent responses.
+## Technical Stack
 
-## ✨ Key Features
+- **Text Embedding**: all-MiniLM-L6-v2 (384-dimensional vectors, 22 MB)
+- **Vector Search**: FAISS with inner-product similarity
+- **Language Model**: TinyLlama 1.1B (quantized GGUF, 638 MB)
+- **PDF Processing**: PyPDF2 for text extraction
+- **Web Interface**: Flask
+- **CLI Interface**: argparse
+- **Testing**: pytest (5 unit tests)
 
-- 🔒 **100% Offline** - No external APIs, no cloud dependencies
-- 🚀 **Fast** - Semantic embeddings (384-dim) + FAISS indexing
-- 📝 **JSON Responses** - Structured output with clause IDs
-- 💻 **Lightweight** - CPU-only, 12GB RAM sufficient
-- 🌐 **Web UI + CLI** - Choose your interface
-- 🧪 **Production-Ready** - 5 unit tests + integration checks
-- 📚 **Smart Chunking** - Semantic segmentation with overlap
+## How It Works
+
+1. **Indexing**: PDF documents are split into chunks, converted to embeddings, and indexed in FAISS
+2. **Query**: User query is converted to embedding and similar chunks are retrieved
+3. **Generation**: Retrieved chunks provide context for a local LLM to generate responses
+4. **Output**: Structured JSON response with decision, amount, and clause references
+
+Typical query latency: 5-15 seconds (1-2 seconds retrieval, 4-13 seconds LLM inference)
+
+## Requirements
+
+- Python 3.10+
+- 8+ GB RAM
+- 2+ GB disk space
+- CPU with 4+ cores recommended
 
 ## System Architecture
 User Query
