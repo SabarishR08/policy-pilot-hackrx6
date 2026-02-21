@@ -1,0 +1,204 @@
+:root {
+  --ink: #0b0a0f;
+  --slate: #2b2f3a;
+  --fog: #f2f1ed;
+  --mint: #b7f3d1;
+  --sky: #a4c8ff;
+  --peach: #ffb38a;
+  --glass: rgba(255, 255, 255, 0.8);
+  --shadow: 0 30px 60px rgba(12, 15, 24, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  background: var(--fog);
+  color: var(--ink);
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(164, 200, 255, 0.6), transparent 55%),
+    radial-gradient(circle at 85% 10%, rgba(255, 179, 138, 0.6), transparent 48%),
+    radial-gradient(circle at 45% 80%, rgba(183, 243, 209, 0.7), transparent 55%),
+    linear-gradient(140deg, #f7f3ea, #eef3ff 55%, #f9f3ea 90%);
+  z-index: -1;
+}
+
+.shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+  display: grid;
+  gap: 24px;
+}
+
+.hero {
+  padding: 32px;
+  border-radius: 24px;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+  animation: rise 0.7s ease;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  color: var(--slate);
+  margin: 0 0 16px;
+}
+
+h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  margin: 0 0 12px;
+}
+
+.lede {
+  font-size: 18px;
+  max-width: 640px;
+  margin: 0;
+  color: var(--slate);
+}
+
+.panel {
+  padding: 28px;
+  border-radius: 22px;
+  background: var(--glass);
+  box-shadow: var(--shadow);
+  animation: fade 0.6s ease;
+}
+
+.panel-header h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.panel-header p {
+  margin: 0 0 16px;
+  color: var(--slate);
+}
+
+.stack {
+  display: grid;
+  gap: 16px;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--slate);
+}
+
+input,
+textarea {
+  font-family: "IBM Plex Mono", monospace;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(20, 20, 20, 0.1);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.file {
+  border: 2px dashed rgba(20, 20, 20, 0.2);
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+button.primary {
+  border: none;
+  background: linear-gradient(135deg, var(--sky), var(--mint));
+  color: var(--ink);
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(12, 15, 24, 0.2);
+}
+
+.toggle {
+  align-items: center;
+  grid-template-columns: auto 1fr;
+}
+
+.toggle input {
+  width: 18px;
+  height: 18px;
+}
+
+.status {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(20, 20, 20, 0.08);
+}
+
+.status.error {
+  border-color: rgba(220, 74, 74, 0.5);
+  color: #b02222;
+}
+
+.result pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: "IBM Plex Mono", monospace;
+  background: rgba(12, 15, 24, 0.9);
+  color: #e9f1ff;
+  padding: 18px;
+  border-radius: 16px;
+  overflow-x: auto;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 720px) {
+  .shell {
+    padding: 32px 16px 64px;
+  }
+
+  .panel,
+  .hero {
+    padding: 22px;
+  }
+}

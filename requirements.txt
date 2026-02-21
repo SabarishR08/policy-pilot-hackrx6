@@ -1,0 +1,8 @@
+faiss-cpu
+flask
+jsonschema
+llama-cpp-python
+numpy
+PyPDF2
+pytest
+sentence-transformers

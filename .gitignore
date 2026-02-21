@@ -1,0 +1,82 @@
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info
+*.egg
+*.dist-info
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+
+# Testing & Coverage
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+htmlcov/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+*.exe
+*.bat
+
+# Project-specific
+models/
+index/
+data/
+cleaned_data/
+all-MiniLM-L6-v2-offline/
+*.gguf
+*.npy
+*.pt
+*.pth
+*.safetensors
+*.bin
+
+# Logs & Temp
+*.log
+*.tmp
+*.temp
+*.bak
+.env
+.env.local
+test_output/
+
+# Large files
+*.pdf
+*.zip
+*.tar
+*.tar.gz
