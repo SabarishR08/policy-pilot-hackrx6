@@ -1,4 +1,55 @@
-# PolicyPilot: Offline Insurance Policy Query System
+# Policy Pilot Hackrx6
+
+![License](https://img.shields.io/badge/license-MIT-green) ![Language](https://img.shields.io/badge/language-Python-informational)
+
+
+## 📌 Overview
+
+PolicyPilot is an interactive chatbot prototype built using TinyLlama, designed to process insurance PDFs, extract relevant clauses, and answer user queries in structured JSON format. It uses semantic embeddings (via SentenceTransformers) and FAISS for fast retrieval, ensuring accurate responses grounded in the policy documents.
+
+## 🏗️ Architecture
+
+```text
+Browser / UI
+     │   HTTP
+     ▼
+Flask app
+```
+
+## 🧰 Tech Stack
+
+- **Language:** Python
+- **Backend:** Flask
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Python 3.10+
+
+### 1. Clone
+
+```bash
+git clone https://github.com/SabarishR08/policy-pilot-hackrx6.git
+cd policy-pilot-hackrx6
+```
+
+### 2. Install dependencies
+
+```bash
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### 4. Run
+
+```bash
+# see repository sources for the primary entrypoint
+```
+
+
+---
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
@@ -260,3 +311,9 @@ This architecture can power:
 
 ## Final Explanation (Simple Words)
 You built a system that reads documents, understands them, finds relevant parts, and answers questions intelligently. It is a mini ChatGPT trained on your documents only.
+
+---
+
+## 📄 License
+
+[MIT](LICENSE) — © 2026 Sabarish R.
