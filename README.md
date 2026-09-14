@@ -3,11 +3,11 @@
 ![License](https://img.shields.io/badge/license-MIT-green) ![Language](https://img.shields.io/badge/language-Python-informational)
 
 
-## 📌 Overview
+## Overview
 
 PolicyPilot is an interactive chatbot prototype built using TinyLlama, designed to process insurance PDFs, extract relevant clauses, and answer user queries in structured JSON format. It uses semantic embeddings (via SentenceTransformers) and FAISS for fast retrieval, ensuring accurate responses grounded in the policy documents.
 
-## 🏗️ Architecture
+## Architecture
 
 ```text
 Browser / UI
@@ -16,12 +16,12 @@ Browser / UI
 Flask app
 ```
 
-## 🧰 Tech Stack
+## Tech Stack
 
 - **Language:** Python
 - **Backend:** Flask
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -88,11 +88,11 @@ Typical query latency: 5-15 seconds (1-2 seconds retrieval, 4-13 seconds LLM inf
 
 ## System Architecture
 User Query
-  -> Embedding Model
-  -> Vector Search (FAISS)
-  -> Relevant Clauses
-  -> Local LLM (TinyLlama)
-  -> Structured JSON Answer
+ -> Embedding Model
+ -> Vector Search (FAISS)
+ -> Relevant Clauses
+ -> Local LLM (TinyLlama)
+ -> Structured JSON Answer
 
 ## Core Technologies Used
 - Python: main programming language
@@ -110,12 +110,12 @@ project/
 |-- chatbot.py
 |-- requirements.txt
 |-- data/
-|   |-- policy1.pdf
-|   |-- policy2.pdf
-|   `-- ...
+| |-- policy1.pdf
+| |-- policy2.pdf
+| `-- ...
 |-- models/
-|   `-- tinyllama.gguf
-|-- index/   (auto created)
+| `-- tinyllama.gguf
+|-- index/ (auto created)
 `-- README.md
 
 ## Step-by-Step Setup
@@ -224,22 +224,22 @@ System:
 ### Phase 7 - LLM Reasoning
 Model receives context plus question and generates structured output:
 {
-  decision: approved or rejected,
-  amount: value,
-  justification: clauses
+ decision: approved or rejected,
+ amount: value,
+ justification: clauses
 }
 
 ## Output Format
 Example response:
 {
-  "Decision": "Rejected",
-  "Amount": "N/A",
-  "Justification": [
-    {
-      "ClauseID": "policy2__143",
-      "Text": "Treatment excluded during waiting period."
-    }
-  ]
+ "Decision": "Rejected",
+ "Amount": "N/A",
+ "Justification": [
+ {
+ "ClauseID": "policy2__143",
+ "Text": "Treatment excluded during waiting period."
+ }
+ ]
 }
 
 ## Key Design Advantages
@@ -314,6 +314,6 @@ You built a system that reads documents, understands them, finds relevant parts,
 
 ---
 
-## 📄 License
+## License
 
 [MIT](LICENSE) — © 2026 Sabarish R.
