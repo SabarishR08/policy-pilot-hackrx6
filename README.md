@@ -1,6 +1,6 @@
 # Policy Pilot Hackrx6
 
-![License](https://img.shields.io/badge/license-MIT-green) ![Language](https://img.shields.io/badge/language-Python-informational)
+![License](https://img.shields.io/badge/license-MIT-green) ![Language](https://img.shields.io/badge/language-Python-informational) ![CI](https://github.com/SabarishR08/policy-pilot-hackrx6/actions/workflows/tests.yml/badge.svg?branch=main)
 
 
 ## Overview
